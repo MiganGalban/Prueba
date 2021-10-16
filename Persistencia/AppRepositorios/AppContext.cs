@@ -32,5 +32,4 @@ namespace Persistencia
             modelBuilder.Entity<TorneoEquipo>().HasKey(x=> new{x.EquipoId,x.TorneoId}); // Se realiza debido a que hay un conflicto de dos ID en la entidad TorneoEquipo
         }
     }
-
 }
