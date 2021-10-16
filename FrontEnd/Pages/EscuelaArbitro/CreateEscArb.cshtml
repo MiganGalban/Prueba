@@ -1,0 +1,47 @@
+﻿@page
+@model FrontEnd.Pages.CreateEscArbModel
+@{
+    ViewData["Title"]="Create";
+}
+<h1>Crear EscuelaArbitro</h1>
+<h3>@ViewData["Mensaje"]</h3>
+
+<div class="form-horizontal">  @* Clase CSS  *@
+    <hr />
+    <div class="row">  @*  Clase CSS Para manejo de filas *@
+        <div class=col-md-4>   @*  Clase CSS Para manejo de Columnas *@
+            <form method="POST">
+                <div>   </div>
+                <div class="form-group">   @*  Clase CSS Para manejo de grupos*@
+                    <label asp-for="EscuelaArbitro.NIT" class="control-label">  </label>
+                    <input asp-for="EscuelaArbitro.NIT" class="form-control"/>
+                    <label asp-for="EscuelaArbitro.Nombre" class="control-label">  </label>
+                    <input asp-for="EscuelaArbitro.Nombre" class="form-control"/>
+                    <label asp-for="EscuelaArbitro.Resolucion" class="control-label">  </label>
+                    <input asp-for="EscuelaArbitro.Resolucion" class="form-control"/>
+                    <label asp-for="EscuelaArbitro.Direccion" class="control-label">  </label>
+                    <input asp-for="EscuelaArbitro.Direccion" class="form-control"/>
+                    <label asp-for="EscuelaArbitro.NumTelf" class="control-label">  </label>
+                    <input asp-for="EscuelaArbitro.NumTelf" class="form-control"/>
+                    <label asp-for="EscuelaArbitro.Correo" class="control-label">  </label>
+                    <input asp-for="EscuelaArbitro.Correo" class="form-control"/>
+
+                </div>
+                <div class="form-group">   @*  Clase CSS Para manejo de grupos *@
+                    <input type="submit" value="Crear" class="btn btn-primary" />
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+    <div>
+        <a asp-page="EscArbIndex">Ir al Inicio</a>
+    </div>
+</div>
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,33 @@
+﻿@page
+@model FrontEnd.Pages.TorIndexModel
+@{ViewData["Title"]="TorIndex"; //
+}
+<h1>Listado de Torneos</h1>
+<p>
+    <a asp-page="CreateTor">Crear Torneo</a>
+</p>
+
+<table class="table"> 
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+        </tr>
+    </thead> 
+    <tbody>
+        @foreach (var mun in Model.Torneos)//Ya enlazado reconoce la lista torneos
+        {
+            //Hay que colocar nuevamente @ para que reconozca lo q se trabajo en la parte cshtml.cs
+            <tr>
+                <td>@mun.Id</td>        
+                <td>@mun.Nombre</td>
+                <td>
+                    <a asp-page="./EditTor" asp-route-id="@mun.Id">Editar</a> @*Se realiza la captura del dato Edit desde aca*@
+                    <a asp-page="./DeleteTor" asp-route-id="@mun.Id">Eliminar</a>
+                    <a asp-page="./DetailsTor" asp-route-id="@mun.Id">Detalles</a>
+                </td>
+            </tr>
+            
+        }
+    </tbody>
+</table>

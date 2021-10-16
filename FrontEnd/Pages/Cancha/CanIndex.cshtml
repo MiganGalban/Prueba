@@ -1,0 +1,33 @@
+﻿@page
+@model FrontEnd.Pages.CanIndexModel
+@{ViewData["Title"]="CanIndex"; //
+}
+<h1>Listado de Canchas</h1>
+<p>
+    <a asp-page="CreateCan">Crear Cancha</a>
+</p>
+
+<table class="table"> 
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+        </tr>
+    </thead> 
+    <tbody>
+        @foreach (var can in Model.Canchas)//Ya enlazado reconoce la lista canchas
+        {
+            //Hay que colocar nuevamente @ para que reconozca lo q se trabajo en la parte cshtml.cs
+            <tr>
+                <td>@can.Id</td>        
+                <td>@can.Nombre</td>
+                <td>
+                    <a asp-page="./EditCan" asp-route-id="@can.Id">Editar</a> @*Se realiza la captura del dato Edit desde aca*@
+                    <a asp-page="./DeleteCan" asp-route-id="@can.Id">Eliminar</a>
+                    <a asp-page="./DetailsCan" asp-route-id="@can.Id">Detalles</a>
+                </td>
+            </tr>
+            
+        }
+    </tbody>
+</table>

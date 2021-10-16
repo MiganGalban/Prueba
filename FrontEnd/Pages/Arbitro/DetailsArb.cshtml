@@ -1,0 +1,66 @@
+﻿@page
+@model FrontEnd.Pages.DetailsArbModel
+@{
+    ViewData["Title"]="Details";
+}
+<h2>Detalles Arbitro</h2>
+
+<div class="form-horizontal">
+        
+        <hr />
+        
+        <div class="row">
+           <div class="col-md-4">
+               <form method="post">
+                   
+                   <input type="hidden" asp-for="Arbitro.Id" />
+                    <div class="form-group">
+                        <table class="table"> 
+                            <thead>
+                                <tr>
+                                    <th><label asp-for="Arbitro.Documento" class="control-label">  </label></th>
+                                    <th><label asp-for="Arbitro.Nombres" class="control-label">  </label></th>
+                                    <th><label asp-for="Arbitro.Apellidos" class="control-label">  </label></th>
+                                    <th><label asp-for="Arbitro.Genero" class="control-label">  </label></th>
+                                    <th><label asp-for="Arbitro.DisciplinaDep" class="control-label">  </label></th>
+                                    <th><label asp-for="Arbitro.NumTelf" class="control-label">  </label></th>
+                                    <th><label asp-for="Arbitro.Correo" class="control-label" align="center">  </label></th>
+                                    <th><label asp-for="Arbitro.TorneoId" class="control-label" >  </label></th>
+                                    <th><label asp-for="Arbitro.EscuelaArbitroId" class="control-label" >  </label></th>
+                                </tr>
+                            </thead>
+                                <tr>
+                                    <td> @Model.Arbitro.Documento </td>
+                                    <td> @Model.Arbitro.Nombres</td>
+                                    <td> @Model.Arbitro.Apellidos</td>
+                                    <td> @Model.Arbitro.Genero</td>
+                                    <td> @Model.Arbitro.DisciplinaDep</td>
+                                    <td> @Model.Arbitro.NumTelf</td>
+                                    <td align="center"> @Model.Arbitro.Correo</td>
+                                    <td align="center"> @Model.Arbitro.TorneoId</td>
+                                    <td align="center"> @Model.Arbitro.EscuelaArbitroId</td>
+                                </tr>
+                        </table>                       
+                      
+                   </div>
+
+                   @*<div class="form-group">
+                       <label asp-for="Arbitro.Nombres" class="control-label"> </label>
+                       <input asp-for="Arbitro.Nombres"  class="form-control" readonly/>                       
+                       
+                   </div>*@
+                   
+               </form>
+           </div>
+        </div>
+
+        <div>
+            <a asp-page="ArbIndex" class="btn btn-warning">Ir a Indice Arbitros</a>
+        </div> 
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
+
+

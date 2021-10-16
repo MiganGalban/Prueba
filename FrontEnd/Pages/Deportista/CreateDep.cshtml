@@ -1,0 +1,61 @@
+﻿@page
+@model FrontEnd.Pages.CreateDepModel
+@{
+    ViewData["Title"]="Create";
+}
+<h1>Crear Deportista</h1>
+<h3>@ViewData["Mensaje"]</h3>
+
+<div class="form-horizontal">  @* Clase CSS  *@
+    <hr />
+    <div class="row">  @*  Clase CSS Para manejo de filas *@
+        <div class=col-md-4>   @*  Clase CSS Para manejo de Columnas *@
+            <form method="POST">
+                <div>   </div>
+                <div class="form-group">   @*  Clase CSS Para manejo de grupos*@
+                    <label asp-for="Deportista.Documento" class="control-label">  </label>
+                    <input asp-for="Deportista.Documento" class="form-control"/>
+                    <label asp-for="Deportista.Nombres" class="control-label">  </label>
+                    <input asp-for="Deportista.Nombres" class="form-control"/>
+                    <label asp-for="Deportista.Apellidos" class="control-label">  </label>
+                    <input asp-for="Deportista.Apellidos" class="form-control"/>
+                    <label asp-for="Deportista.Genero" class="control-label">  </label>
+                    <input asp-for="Deportista.Genero" class="form-control"/>
+                    <label asp-for="Deportista.DisciplinaDep" class="control-label">  </label>
+                    <input asp-for="Deportista.DisciplinaDep" class="form-control"/>
+                    <label asp-for="Deportista.NumTelf" class="control-label">  </label>
+                    <input asp-for="Deportista.NumTelf" class="form-control"/>
+                    <label asp-for="Deportista.RH" class="control-label">  </label>
+                    <input asp-for="Deportista.RH" class="form-control"/>
+                    <label asp-for="Deportista.EPS" class="control-label">  </label>
+                    <input asp-for="Deportista.EPS" class="form-control"/>
+                    
+                    <label asp-for="Deportista.Direccion" class="control-label">  </label>
+                    <input asp-for="Deportista.Direccion" class="form-control"/>
+                    <label asp-for="Deportista.FechaNac" class="control-label">  </label>
+                    <input asp-for="Deportista.FechaNac" class="form-control"/>
+                    <label asp-for="Deportista.CapacidadEsp" class="control-label">  </label>
+                    <input asp-for="Deportista.CapacidadEsp" class="form-control"/>
+                    <label asp-for="Deportista.EquipoId" class="control-label">  </label>
+                    <input asp-for="Deportista.EquipoId" class="form-control"/>
+
+
+                </div>
+                <div class="form-group">   @*  Clase CSS Para manejo de grupos *@
+                    <input type="submit" value="Crear" class="btn btn-primary" />
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+    <div>
+        <a asp-page="DepIndex">Ir al Inicio</a>
+    </div>
+</div>
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

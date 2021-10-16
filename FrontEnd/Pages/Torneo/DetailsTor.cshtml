@@ -1,0 +1,53 @@
+﻿@page
+@model FrontEnd.Pages.DetailsTorModel
+@{
+}
+<h1>Details</h1>
+<h4>Torneo</h4>
+
+<div class="form-horizontal">
+        
+        <hr />
+        
+        <div class="row">
+           <div class="col-md-4">
+               <form method="post">
+                   
+                   <input type="hidden" asp-for="Torneo.Id" />
+                    <div class="form-group">
+                       <label asp-for="Torneo.Id" class="control-label"> </label>
+                       <input asp-for="Torneo.Id"  class="form-control" readonly/>                       
+                      
+                   </div>
+
+                   <div class="form-group">
+                        <label asp-for="Torneo.Nombre" class="control-label">  </label>
+                        <input asp-for="Torneo.Nombre" readonly class="form-control"/>
+                        <label asp-for="Torneo.Categoria" class="control-label">  </label>
+                        <input asp-for="Torneo.Categoria" readonly class="form-control"/>
+                        <label asp-for="Torneo.FechaIni" class="control-label">  </label>
+                        <input asp-for="Torneo.FechaIni" readonly class="form-control"/>
+                        <label asp-for="Torneo.FechaFin" class="control-label">  </label>
+                        <input asp-for="Torneo.FechaFin" readonly class="form-control"/>
+                        <label asp-for="Torneo.DisciplinaDep" class="control-label">  </label>
+                        <input asp-for="Torneo.DisciplinaDep" readonly class="form-control"/>
+                        <label asp-for="Torneo.MunicipioId" class="control-label">  </label>
+                        <input asp-for="Torneo.MunicipioId" readonly class="form-control"/>
+                        <label asp-for="Torneo.CapacidadEsp" class="control-label">  </label>
+                        <input asp-for="Torneo.CapacidadEsp" readonly class="form-control"/>                     
+                       
+                   </div>
+                   
+               </form>
+           </div>
+        </div>
+
+        <div>
+            <a asp-page="TorIndex"> Back to List</a>
+        </div> 
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
+

@@ -1,0 +1,34 @@
+﻿@page
+@model FrontEnd.Pages.EscIndexModel
+@{
+    ViewData["Title"]="EscIndex"; //
+}
+<h1>Listado de Escenarios</h1>
+<p>
+    <a asp-page="CreateEsc">Crear Escenario</a>
+</p>
+
+<table class="table"> 
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+        </tr>
+    </thead> 
+    <tbody>
+        @foreach (var esc in Model.Escenarios)//Ya enlazado reconoce la lista escenarios
+        {
+            //Hay que colocar nuevamente @ para que reconozca lo q se trabajo en la parte cshtml.cs
+            <tr>
+                <td>@esc.Id</td>        
+                <td>@esc.Nombre</td>
+                <td>
+                    <a asp-page="./EditEsc" asp-route-id="@esc.Id">Editar</a> @*Se realiza la captura del dato Edit desde aca*@
+                    <a asp-page="./DeleteEsc" asp-route-id="@esc.Id">Eliminar</a>
+                    <a asp-page="./DetailsEsc" asp-route-id="@esc.Id">Detalles</a>
+                </td>
+            </tr>
+            
+        }
+    </tbody>
+</table>

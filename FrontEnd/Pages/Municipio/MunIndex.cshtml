@@ -1,0 +1,34 @@
+﻿@page
+@model FrontEnd.Pages.MunIndexModel // Indica con quien se va a enlazar, de donde trae la Info *.cshtml.cs
+@{
+    ViewData["Title"]="MunIndex"; //
+}
+<h1>Listado de Municipios</h1>
+<p>
+    <a asp-page="Create">Crear Municipio</a> @*Link crear municipio, salto directo entre paginas asp, llamando a Create.cshtml en la misma carpeta*@
+</p>
+
+<table class="table"> @*Mostramos una tabla subdividida en filas y columnas*@
+    <thead> @*Marca de encabezado para lista*@
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+        </tr>
+    </thead> 
+    <tbody>
+        @foreach (var mun in Model.Municipios)// Con este Model. nos comunicamos al archivo *.cs que es donde esta el codigo Ya enlazado reconoce la lista municipios
+        {   //Aqui recibio el listado Municipios con la declaracion que se hizo en el .cs cuando se disparo el OnGet
+            //Hay que colocar @ para que reconozca los objetos  q se trabajaron en la parte cshtml.cs
+            <tr>
+                <td>@mun.Id</td>        
+                <td>@mun.Nombre</td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@mun.Id">Editar</a> @*Se realiza la captura del dato Edit desde aca*@
+                    <a asp-page="./Delete" asp-route-id="@mun.Id">Eliminar</a> @*cuando se de click en cualquier opcion va enviar el dato del Id del municipio consultado *@
+                    <a asp-page="./Details" asp-route-id="@mun.Id">Detalles</a>
+                </td>
+            </tr>
+            
+        }
+    </tbody>
+</table>

@@ -1,0 +1,56 @@
+﻿@page
+@model FrontEnd.Pages.EditArbModel
+@{
+    ViewData["Title"]="Edit";
+}
+
+<h2>Editar Arbitro</h2>
+
+<h3>@ViewData["Mensaje"]</h3>
+
+<div class="form-horizontal">
+        
+        <hr />
+        
+        <div class="row">
+           <div class="col-md-4">
+               <form method="post">
+                  
+                   <input type="hidden" asp-for="Arbitro.Id" />
+                   <div class="form-group">
+                    
+                    <label asp-for="Arbitro.Documento" class="control-label">  </label>
+                    <input asp-for="Arbitro.Documento" class="form-control"/>
+                    <label asp-for="Arbitro.Nombres" class="control-label">  </label>
+                    <input asp-for="Arbitro.Nombres" class="form-control"/>
+                    <label asp-for="Arbitro.Apellidos" class="control-label">  </label>
+                    <input asp-for="Arbitro.Apellidos" class="form-control"/>
+                    <label asp-for="Arbitro.Genero" class="control-label">  </label>
+                    <input asp-for="Arbitro.Genero" class="form-control"/>
+                    <label asp-for="Arbitro.DisciplinaDep" class="control-label">  </label>
+                    <input asp-for="Arbitro.DisciplinaDep" class="form-control"/>
+                    <label asp-for="Arbitro.NumTelf" class="control-label">  </label>
+                    <input asp-for="Arbitro.NumTelf" class="form-control"/>
+                    <label asp-for="Arbitro.Correo" class="control-label">  </label>
+                    <input asp-for="Arbitro.Correo" class="form-control"/>
+                    <label asp-for="Arbitro.TorneoId" class="control-label">  </label>
+                    <input asp-for="Arbitro.TorneoId" class="form-control"/>
+                    <label asp-for="Arbitro.EscuelaArbitroId" class="control-label">  </label>
+                    <input asp-for="Arbitro.EscuelaArbitroId" class="form-control"/>
+
+                   </div>
+                   <div class="form-group">                       
+                       <input type="submit" value="Edit" class="btn btn-primary"/>                       
+                   </div>
+               </form>
+           </div>
+        </div>
+
+        <div>
+            <a asp-page="ArbIndex" class="btn btn-warning">Ir a Indice Arbitros</a>
+        </div> 
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

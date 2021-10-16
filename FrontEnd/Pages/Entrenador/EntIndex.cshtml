@@ -1,0 +1,36 @@
+﻿@page
+@model FrontEnd.Pages.EntIndexModel
+@{
+    ViewData["Title"]="EntIndex"; //
+}
+<h1>Listado de Entrenadores</h1>
+<p>
+    <a asp-page="CreateEnt">Crear Entrenador</a>
+</p>
+
+<table class="table"> 
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+        </tr>
+    </thead> 
+    <tbody>
+        @foreach (var ent in Model.Entrenadores)//Ya enlazado reconoce la lista entrenadors
+        {
+            //Hay que colocar nuevamente @ para que reconozca lo q se trabajo en la parte cshtml.cs
+            <tr>
+                <td>@ent.Id</td>
+                <td>@ent.Documento</td>        
+                <td>@ent.Nombres</td>
+                <td>@ent.Apellidos</td>
+                <td>
+                    <a asp-page="./EditEnt" asp-route-id="@ent.Id">Editar</a> @*Se realiza la captura del dato Edit desde aca*@
+                    <a asp-page="./DeleteEnt" asp-route-id="@ent.Id">Eliminar</a>
+                    <a asp-page="./DetailsEnt" asp-route-id="@ent.Id">Detalles</a>
+                </td>
+            </tr>
+            
+        }
+    </tbody>
+</table>

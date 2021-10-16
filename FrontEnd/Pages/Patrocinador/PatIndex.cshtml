@@ -1,0 +1,33 @@
+﻿@page
+@model FrontEnd.Pages.PatIndexModel
+@{ViewData["Title"]="PatIndex"; //
+}
+<h1>Listado de Patrocinadores</h1>
+<p>
+    <a asp-page="CreatePat">Crear Patrocinador</a>
+</p>
+
+<table class="table"> 
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+        </tr>
+    </thead> 
+    <tbody>
+        @foreach (var mun in Model.Patrocinadores)//Ya enlazado reconoce la lista patrocinadors
+        {
+            //Hay que colocar nuevamente @ para que reconozca lo q se trabajo en la parte cshtml.cs
+            <tr>
+                <td>@mun.Id</td>        
+                <td>@mun.Nombre</td>
+                <td>
+                    <a asp-page="./EditPat" asp-route-id="@mun.Id">Editar</a> @*Se realiza la captura del dato Edit desde aca*@
+                    <a asp-page="./DeletePat" asp-route-id="@mun.Id">Eliminar</a>
+                    <a asp-page="./DetailsPat" asp-route-id="@mun.Id">Detalles</a>
+                </td>
+            </tr>
+            
+        }
+    </tbody>
+</table>

@@ -1,0 +1,37 @@
+﻿@page
+@model FrontEnd.Pages.DepIndexModel
+@{
+    ViewData["Title"]="DepIndex"; //
+}
+<h1>Listado de Deportistas</h1>
+<p>
+    <a asp-page="CreateDep">Crear Deportista</a>
+</p>
+
+<table class="table"> 
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+        </tr>
+    </thead> 
+    <tbody>
+        @foreach (var dep in Model.Deportistas)//Ya enlazado reconoce la lista deportistas
+        {
+            //Hay que colocar nuevamente @ para que reconozca lo q se trabajo en la parte cshtml.cs
+            <tr>
+                <td>@dep.Id</td>        
+                <td>@dep.Documento</td>
+                <td>@dep.Nombres</td>
+
+                <td>
+                    <a asp-page="./EditDep" asp-route-id="@dep.Id">Editar</a> @*Se realiza la captura del dato Edit desde aca*@
+                    <a asp-page="./DeleteDep" asp-route-id="@dep.Id">Eliminar</a>
+                    <a asp-page="./DetailsDep" asp-route-id="@dep.Id">Detalles</a>
+                </td>
+            </tr>
+            
+        }
+    </tbody>
+</table>
+

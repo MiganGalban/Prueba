@@ -1,0 +1,48 @@
+﻿@page
+@model FrontEnd.Pages.CreateEquModel
+@{
+    ViewData["Title"]="Create";
+}
+<h1>Crear Equipo</h1>
+<h3>@ViewData["Mensaje"]</h3>
+
+<div class="form-horizontal">  @* Clase CSS  *@
+    <hr />
+    <div class="row">  @*  Clase CSS Para manejo de filas *@
+        <div class=col-md-4>   @*  Clase CSS Para manejo de Columnas *@
+            <form method="POST">
+                <div>   </div>
+                <div class="form-group">   @*  Clase CSS Para manejo de grupos*@
+                    <label asp-for="Equipo.Nombre" class="control-label">  </label>
+                    <input asp-for="Equipo.Nombre" class="form-control"/>
+                    <label asp-for="Equipo.CantDep" class="control-label">  </label>
+                    <input asp-for="Equipo.CantDep" class="form-control"/>
+                    <label asp-for="Equipo.DisciplinaDep" class="control-label">  </label>
+                    <input asp-for="Equipo.DisciplinaDep" class="form-control"/>
+                    <label asp-for="Equipo.Entrenador" class="control-label">  </label>
+                    <input asp-for="Equipo.Entrenador" class="form-control"/>
+                    <label asp-for="Equipo.PatrocinadorId" class="control-label">  </label>
+                    <input asp-for="Equipo.PatrocinadorId" class="form-control"/>
+                    <label asp-for="Equipo.CapacidadEsp" class="control-label">  </label>
+                    <input asp-for="Equipo.CapacidadEsp" class="form-control"/>
+                    
+
+                </div>
+                <div class="form-group">   @*  Clase CSS Para manejo de grupos *@
+                    <input type="submit" value="Crear" class="btn btn-primary" />
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+    <div>
+        <a asp-page="EquIndex">Ir al Inicio</a>
+    </div>
+</div>
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

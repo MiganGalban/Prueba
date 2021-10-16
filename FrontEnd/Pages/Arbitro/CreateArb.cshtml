@@ -1,0 +1,67 @@
+﻿@page
+@model FrontEnd.Pages.CreateArbModel
+@{
+    ViewData["Title"]="Create";
+}
+<h2>Crear Arbitro</h2>
+<h3 class="text-danger">@ViewData["Mensaje"]</h3>
+
+<div class="form-horizontal">  @* Clase CSS  *@
+    <hr />
+    <div class="row">  @*  Clase CSS Para manejo de filas *@
+        <div class=col-md-4>   @*  Clase CSS Para manejo de Columnas *@
+            <form method="POST">
+                <div>   </div>
+                <div class="form-group">   @*  Clase CSS Para manejo de grupos*@
+                    <label asp-for="Arbitro.Documento" class="control-label">  </label>
+                    <input asp-for="Arbitro.Documento" class="form-control"/>
+                    <label asp-for="Arbitro.Nombres" class="control-label">  </label>
+                    <input asp-for="Arbitro.Nombres" class="form-control"/>
+                    <label asp-for="Arbitro.Apellidos" class="control-label">  </label>
+                    <input asp-for="Arbitro.Apellidos" class="form-control"/>
+                    <label asp-for="Arbitro.Genero" class="control-label">  </label>
+                    <input asp-for="Arbitro.Genero" class="form-control"/>
+                    <label asp-for="Arbitro.DisciplinaDep" class="control-label">  </label>
+                    <input asp-for="Arbitro.DisciplinaDep" class="form-control"/>
+                    <label asp-for="Arbitro.NumTelf" class="control-label">  </label>
+                    <input asp-for="Arbitro.NumTelf" class="form-control"/>
+                    <label asp-for="Arbitro.Correo" class="control-label">  </label>
+                    <input asp-for="Arbitro.Correo" class="form-control"/>
+                    
+                    <label asp-for="Arbitro.TorneoId" class="control-label">  </label>
+                    <select asp-for="Arbitro.TorneoId" class="form-control"> 
+                        <option value="" > --Seleccione un Torneo-- </option>
+                        @foreach (var tor in Model.Torneos)
+                        {
+                            <option value="@tor.Id" > @tor.Nombre </option>
+                        }
+                    </select>
+
+                    <label asp-for="Arbitro.EscuelaArbitroId" class="control-label">  </label>
+                    <select asp-for="Arbitro.EscuelaArbitroId" class="form-control"> 
+                        <option value="" > --Seleccione una Escuela-- </option>
+                        @foreach (var escArb in Model.EscuelaArbitros)
+                        {
+                            <option value="@escArb.Id" > @escArb.Nombre </option>
+                        }
+                    </select>
+
+                </div>
+                <div class="form-group">   @*  Clase CSS Para manejo de grupos *@
+                    <input type="submit" value="Crear" class="btn btn-primary" />
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+    <div>
+        <a asp-page="ArbIndex" class="btn btn-warning">Ir a Indice Arbitros</a>
+    </div>
+</div>
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

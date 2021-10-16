@@ -1,0 +1,51 @@
+﻿@page
+@model FrontEnd.Pages.DetailsEquModel
+@{
+}
+<h1>Details</h1>
+<h4>Equipo</h4>
+
+<div class="form-horizontal">
+        
+        <hr />
+        
+        <div class="row">
+           <div class="col-md-4">
+               <form method="post">
+                   
+                   <input type="hidden" asp-for="Equipo.Id" />
+                    <div class="form-group">
+                       <label asp-for="Equipo.Id" class="control-label"> </label>
+                       <input asp-for="Equipo.Id"  class="form-control" readonly/>                       
+                      
+                   </div>
+
+                   <div class="form-group">
+                        <label asp-for="Equipo.Nombre" class="control-label">  </label>
+                        <input asp-for="Equipo.Nombre" readonly class="form-control"/>
+                        <label asp-for="Equipo.CantDep" class="control-label">  </label>
+                        <input asp-for="Equipo.CantDep" readonly class="form-control"/>
+                        <label asp-for="Equipo.DisciplinaDep" class="control-label">  </label>
+                        <input asp-for="Equipo.DisciplinaDep" readonly class="form-control"/>
+                        <label asp-for="Equipo.Entrenador" class="control-label">  </label>
+                        <input asp-for="Equipo.Entrenador" readonly class="form-control"/>
+                        <label asp-for="Equipo.PatrocinadorId" class="control-label">  </label>
+                        <input asp-for="Equipo.PatrocinadorId" readonly class="form-control"/>
+                        <label asp-for="Equipo.CapacidadEsp" class="control-label">  </label>
+                        <input asp-for="Equipo.CapacidadEsp" readonly class="form-control"/>                       
+                       
+                   </div>
+                   
+               </form>
+           </div>
+        </div>
+
+        <div>
+            <a asp-page="EquIndex"> Back to List</a>
+        </div> 
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
+

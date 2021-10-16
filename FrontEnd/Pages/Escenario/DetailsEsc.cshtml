@@ -1,0 +1,49 @@
+﻿@page
+@model FrontEnd.Pages.DetailsEscModel
+@{
+}
+<h1>Details</h1>
+<h4>Escenario</h4>
+
+<div class="form-horizontal">
+        
+        <hr />
+        
+        <div class="row">
+           <div class="col-md-4">
+               <form method="post">
+                   
+                   <input type="hidden" asp-for="Escenario.Id" />
+                    <div class="form-group">
+                       <label asp-for="Escenario.Id" class="control-label"> </label>
+                       <input asp-for="Escenario.Id"  class="form-control" readonly/>                       
+                      
+                   </div>
+
+                   <div class="form-group">
+                        <label asp-for="Escenario.Nombre" class="control-label">  </label>
+                        <input asp-for="Escenario.Nombre" readonly class="form-control"/>
+                        <label asp-for="Escenario.Direccion" class="control-label">  </label>
+                        <input asp-for="Escenario.Direccion" readonly class="form-control"/>
+                        <label asp-for="Escenario.NumTelf" class="control-label">  </label>
+                        <input asp-for="Escenario.NumTelf" readonly class="form-control"/>
+                        <label asp-for="Escenario.Horario" class="control-label">  </label>
+                        <input asp-for="Escenario.Horario" readonly class="form-control"/>
+                        <label asp-for="Escenario.TorneoId" class="control-label">  </label>
+                        <input asp-for="Escenario.TorneoId" readonly class="form-control"/>                         
+                       
+                   </div>
+                   
+               </form>
+           </div>
+        </div>
+
+        <div>
+            <a asp-page="EscIndex"> Back to List</a>
+        </div> 
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
+

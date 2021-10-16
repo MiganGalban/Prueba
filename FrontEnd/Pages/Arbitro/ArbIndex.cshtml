@@ -1,0 +1,49 @@
+﻿@page
+@model FrontEnd.Pages.ArbIndexModel // Indica con quien se va a enlazar, de donde trae la Info *.cshtml.cs
+@{
+    ViewData["Title"]="ArbIndex"; //
+
+
+}
+<h2>Listado de Arbitros</h2>
+<p>
+    <a asp-page="CreateArb" class="btn btn-success">Crear Arbitro</a>
+</p>
+
+<table class="table"> 
+    <thead>
+        @*Nombre de fillas que aparecen*@
+        <tr>
+            <th>Id</th>
+            <th>Documento</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            @*<th>Genero</th>
+            <th>DisciplinaDep</th>
+            <th>NumTelf</th>
+            <th>Correo</th>*@
+
+            @*NO SE si este Pendiente inclusion de Llave Foranea*@
+        </tr>
+    </thead> 
+    <tbody>
+        @foreach (var arb in Model.Arbitros)//Ya enlazado reconoce la lista municipios
+        {
+            //Hay que colocar nuevamente @ para que reconozca lo q se trabajo en la parte cshtml.cs
+            //Atributos que se van a indexar
+            <tr>
+                <td>@arb.Id</td>        
+                <td>@arb.Documento</td>
+                <td>@arb.Nombres</td>
+                <td>@arb.Apellidos</td>
+
+                <td>
+                    <a asp-page="./EditArb" asp-route-id="@arb.Id" class="btn btn-outline-primary">Editar</a> @*Se realiza la captura del dato Edit desde aca*@
+                    <a asp-page="./DeleteArb" asp-route-id="@arb.Id" class="btn btn-danger">Eliminar</a>
+                    <a asp-page="./DetailsArb" asp-route-id="@arb.Id" class="btn btn-info">Detalles</a>
+                </td>
+            </tr>
+            
+        }
+    </tbody>
+</table>

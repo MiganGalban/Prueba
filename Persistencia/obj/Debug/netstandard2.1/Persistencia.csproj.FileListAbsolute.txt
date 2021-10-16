@@ -1,0 +1,12 @@
+C:\Users\Galban\Desktop\Ciclo3\Proyecto\Aplicacion\Persistencia\bin\Debug\netstandard2.1\Persistencia.deps.json
+C:\Users\Galban\Desktop\Ciclo3\Proyecto\Aplicacion\Persistencia\bin\Debug\netstandard2.1\Persistencia.dll
+C:\Users\Galban\Desktop\Ciclo3\Proyecto\Aplicacion\Persistencia\bin\Debug\netstandard2.1\Persistencia.pdb
+C:\Users\Galban\Desktop\Ciclo3\Proyecto\Aplicacion\Persistencia\obj\Debug\netstandard2.1\Persistencia.csprojAssemblyReference.cache
+C:\Users\Galban\Desktop\Ciclo3\Proyecto\Aplicacion\Persistencia\obj\Debug\netstandard2.1\Persistencia.AssemblyInfoInputs.cache
+C:\Users\Galban\Desktop\Ciclo3\Proyecto\Aplicacion\Persistencia\obj\Debug\netstandard2.1\Persistencia.AssemblyInfo.cs
+C:\Users\Galban\Desktop\Ciclo3\Proyecto\Aplicacion\Persistencia\obj\Debug\netstandard2.1\Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\Galban\Desktop\Ciclo3\Proyecto\Aplicacion\Persistencia\obj\Debug\netstandard2.1\Persistencia.dll
+C:\Users\Galban\Desktop\Ciclo3\Proyecto\Aplicacion\Persistencia\obj\Debug\netstandard2.1\Persistencia.pdb
+C:\Users\Galban\Desktop\Ciclo3\Proyecto\Aplicacion\Persistencia\bin\Debug\netstandard2.1\Dominio.dll
+C:\Users\Galban\Desktop\Ciclo3\Proyecto\Aplicacion\Persistencia\bin\Debug\netstandard2.1\Dominio.pdb
+C:\Users\Galban\Desktop\Ciclo3\Proyecto\Aplicacion\Persistencia\obj\Debug\netstandard2.1\Persistencia.csproj.CopyComplete

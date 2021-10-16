@@ -1,0 +1,51 @@
+﻿@page
+@model FrontEnd.Pages.DetailsEscArbModel
+@{
+}
+<h1>Details</h1>
+<h4>EscuelaArbitro</h4>
+
+<div class="form-horizontal">
+        
+        <hr />
+        
+        <div class="row">
+           <div class="col-md-4">
+               <form method="post">
+                   
+                   <input type="hidden" asp-for="EscuelaArbitro.Id" />
+                    <div class="form-group">
+                       <label asp-for="EscuelaArbitro.Id" class="control-label"> </label>
+                       <input asp-for="EscuelaArbitro.Id"  class="form-control" readonly/>                       
+                      
+                   </div>
+
+                   <div class="form-group">
+                        <label asp-for="EscuelaArbitro.NIT" class="control-label">  </label>
+                        <input asp-for="EscuelaArbitro.NIT" readonly class="form-control"/>
+                        <label asp-for="EscuelaArbitro.Nombre" class="control-label">  </label>
+                        <input asp-for="EscuelaArbitro.Nombre" readonly class="form-control"/>
+                        <label asp-for="EscuelaArbitro.Resolucion" class="control-label">  </label>
+                        <input asp-for="EscuelaArbitro.Resolucion" readonly class="form-control"/>
+                        <label asp-for="EscuelaArbitro.Direccion" class="control-label">  </label>
+                        <input asp-for="EscuelaArbitro.Direccion" readonly class="form-control"/>
+                        <label asp-for="EscuelaArbitro.NumTelf" class="control-label">  </label>
+                        <input asp-for="EscuelaArbitro.NumTelf" readonly class="form-control"/>
+                        <label asp-for="EscuelaArbitro.Correo" class="control-label">  </label>
+                        <input asp-for="EscuelaArbitro.Correo" readonly class="form-control"/>                      
+                       
+                   </div>
+                   
+               </form>
+           </div>
+        </div>
+
+        <div>
+            <a asp-page="EscArbIndex"> Back to List</a>
+        </div> 
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
+
